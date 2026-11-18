@@ -1,0 +1,10 @@
+From: newsletter@example.test
+To: candidate@163.com
+Subject: 本周天气通讯
+Date: Mon, 16 Nov 2026 09:00:00 +0800
+Message-ID: <newsletter-001@example.test>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+今天晴，适合散步。
+

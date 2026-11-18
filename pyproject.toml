@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentic-job-search-copilot"
+version = "0.3.0"
+description = "网易邮箱、飞书与带审批边界的 Agentic Job Search Copilot"
+requires-python = ">=3.9"
+dependencies = [
+  "python-dotenv>=1.0,<2",
+  "pydantic>=2.6,<3",
+  "requests>=2.31,<3",
+  "tenacity>=8.2,<10",
+]
+
+[project.scripts]
+job-workflow = "job_workflow.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["UP045"] # Python 3.9 + Pydantic 运行时需要 Optional，而不是 PEP 604 union
+

@@ -1,0 +1,17 @@
+{
+  "goal_id": "replace-with-your-goal-id",
+  "title": "请填写你的目标岗位范围",
+  "role_keywords": ["请填写岗位关键词"],
+  "locations": ["请填写城市"],
+  "employment_types": ["实习"],
+  "industries": [],
+  "preferred_companies": [],
+  "excluded_companies": [],
+  "required_keywords": [],
+  "excluded_keywords": [],
+  "published_within_days": 7,
+  "max_results_per_query": 10,
+  "active": false,
+  "cadence": "manual",
+  "notes": "确认目标后把 active 改为 true，再导入飞书。"
+}
