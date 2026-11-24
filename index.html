@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Agentic Job Search Copilot 脱敏交互式项目演示" />
+    <title>Agentic Job Search Copilot · Interactive Demo</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <canvas id="space" aria-hidden="true"></canvas>
+    <div class="ambient ambient-a" aria-hidden="true"></div>
+    <div class="ambient ambient-b" aria-hidden="true"></div>
+
+    <header class="nav-shell">
+      <nav class="nav" aria-label="主导航">
+        <a class="brand" href="#top" aria-label="返回顶部">
+          <span class="brand-cube" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span><b>JOB//AGENT</b><small>v0.3 · DEMO</small></span>
+        </a>
+        <div class="nav-links">
+          <a href="#evolution">版本演进</a>
+          <a href="#demo">交互演示</a>
+          <a href="#boundary">安全边界</a>
+        </div>
+        <a class="nav-cta" href="https://github.com/changxiali/agentic-job-search-copilot" target="_blank" rel="noreferrer">查看源码</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero section-pad">
+        <div class="hero-copy reveal">
+          <div class="eyebrow"><span></span> AI-ENHANCED · APPROVAL-GATED</div>
+          <h1>让求职信息<br /><em>自己流动起来</em></h1>
+          <p class="hero-lead">从邮件识别、求职 CRM 到岗位发现与决策辅助——一个目标驱动、工具受控、保留人工审批权的 Agentic Workflow。</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#demo"><span>运行脱敏演示</span></a>
+            <a class="button ghost" href="#architecture">理解工作原理</a>
+          </div>
+          <div class="hero-metrics" aria-label="项目核心特性">
+            <div><strong>3</strong><span>阶段演进</span></div>
+            <div><strong>7</strong><span>安全工具</span></div>
+            <div><strong>100%</strong><span>人工保留决策权</span></div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" aria-label="Agent 三维核心示意图">
+          <div class="scene" id="heroScene">
+            <div class="orbit orbit-1"><span class="satellite s1"></span></div>
+            <div class="orbit orbit-2"><span class="satellite s2"></span></div>
+            <div class="orbit orbit-3"><span class="satellite s3"></span></div>
+            <div class="core">
+              <div class="core-grid"></div>
+              <div class="core-glow"></div>
+              <div class="core-label"><small>GOAL-DRIVEN</small><strong>AGENT</strong><span>ONLINE · SAFE</span></div>
+            </div>
+            <div class="float-tag tag-a"><span>01</span>Observe</div>
+            <div class="float-tag tag-b"><span>02</span>Reason</div>
+            <div class="float-tag tag-c"><span>03</span>Act</div>
+            <div class="float-tag tag-d"><span>04</span>Verify</div>
+            <div class="floor-grid"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="trust-strip" aria-label="系统能力">
+        <div class="marquee">
+          <span>NETEASE IMAP</span><i></i><span>DEEPSEEK</span><i></i><span>FEISHU BITABLE</span><i></i><span>PYDANTIC</span><i></i><span>HUMAN APPROVAL</span><i></i><span>DECISION LOG</span><i></i>
+          <span>NETEASE IMAP</span><i></i><span>DEEPSEEK</span><i></i><span>FEISHU BITABLE</span><i></i><span>PYDANTIC</span><i></i><span>HUMAN APPROVAL</span><i></i><span>DECISION LOG</span><i></i>
+        </div>
+      </section>
+
+      <section class="section-pad evolution" id="evolution">
+        <div class="section-heading reveal">
+          <div class="eyebrow"><span></span> FROM AUTOMATION TO AGENTIC</div>
+          <h2>不是突然“变成 Agent”<br />而是逐层建立能力</h2>
+          <p>每个版本解决一个明确问题，也保留清晰的系统边界。</p>
+        </div>
+        <div class="version-deck">
+          <article class="version-card tilt reveal" data-version="V1">
+            <div class="card-top"><span class="version-index">V1</span><span class="status-pill">WORKFLOW</span></div>
+            <div class="version-icon mail-3d" aria-hidden="true"><span></span></div>
+            <h3>Email → Event → Action</h3>
+            <p>读取求职邮件，识别投递与面试事件，写入飞书并创建日程。</p>
+            <ul><li>邮件过滤与解析</li><li>结构化 JSON 校验</li><li>幂等记录与异常处理</li></ul>
+          </article>
+          <article class="version-card tilt reveal active-card" data-version="V2">
+            <div class="card-top"><span class="version-index">V2</span><span class="status-pill">COPILOT</span></div>
+            <div class="version-icon prism-3d" aria-hidden="true"><span></span><span></span><span></span></div>
+            <h3>Context → Analysis → Prep</h3>
+            <p>理解 JD 与候选人经历，生成匹配分析和面试准备材料。</p>
+            <ul><li>JD Schema</li><li>Candidate Profile</li><li>匹配、复盘与 Analytics</li></ul>
+          </article>
+          <article class="version-card tilt reveal" data-version="V3">
+            <div class="card-top"><span class="version-index">V3</span><span class="status-pill accent">AGENTIC</span></div>
+            <div class="version-icon rings-3d" aria-hidden="true"><span></span><span></span><span></span></div>
+            <h3>Goal → Plan → Decide</h3>
+            <p>围绕明确 Search Goal 发现岗位、分析排序、记录理由并提出审批。</p>
+            <ul><li>公开岗位搜索与去重</li><li>安全工具白名单</li><li>人工审批与决策日志</li></ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="architecture section-pad" id="architecture">
+        <div class="section-heading compact reveal">
+          <div class="eyebrow"><span></span> SYSTEM ARCHITECTURE</div>
+          <h2>一次任务，如何穿过系统</h2>
+        </div>
+        <div class="pipeline-wrap reveal">
+          <div class="pipeline-line" aria-hidden="true"><span></span></div>
+          <div class="pipeline-step" style="--i:0"><b>01</b><div><small>INPUT</small><strong>邮件 / Search Goal</strong><span>发生了什么、需要什么</span></div></div>
+          <div class="pipeline-step" style="--i:1"><b>02</b><div><small>UNDERSTAND</small><strong>Schema + AI</strong><span>把非结构化信息变成事实</span></div></div>
+          <div class="pipeline-step" style="--i:2"><b>03</b><div><small>REASON</small><strong>Match + Rank</strong><span>基于证据进行匹配与排序</span></div></div>
+          <div class="pipeline-step" style="--i:3"><b>04</b><div><small>CONTROL</small><strong>Approval Gate</strong><span>高影响动作等待用户批准</span></div></div>
+          <div class="pipeline-step" style="--i:4"><b>05</b><div><small>MEMORY</small><strong>Feishu CRM</strong><span>状态、来源与决策可追溯</span></div></div>
+        </div>
+      </section>
+
+      <section class="demo-section section-pad" id="demo">
+        <div class="section-heading reveal">
+          <div class="eyebrow"><span></span> LIVE SIMULATION · FICTIONAL DATA</div>
+          <h2>看 Agentic Workflow<br />完成一轮岗位评估</h2>
+          <p>这是完全脱敏的前端模拟，不调用真实邮箱、飞书或模型 API。</p>
+        </div>
+
+        <div class="demo-console reveal">
+          <div class="console-toolbar">
+            <div class="window-dots"><i></i><i></i><i></i></div>
+            <span>agent-run / demo-session</span>
+            <div class="live-indicator"><i></i><span id="runState">READY</span></div>
+          </div>
+          <div class="console-body">
+            <aside class="goal-panel">
+              <div class="panel-label">SEARCH GOAL</div>
+              <label>目标岗位<select id="roleSelect"><option>AI 产品经理</option><option>数据产品经理</option><option>策略产品经理</option></select></label>
+              <label>目标城市<select id="citySelect"><option>上海</option><option>深圳</option><option>北京</option></select></label>
+              <label>时间范围<select><option>最近 7 天</option><option>最近 14 天</option></select></label>
+              <div class="goal-tags"><span>实习</span><span>AI</span><span>产品</span></div>
+              <button class="run-button" id="runDemo"><span class="play">▶</span><span class="run-copy">启动模拟任务</span></button>
+              <p class="privacy-note"><i>✓</i> 使用虚构数据，不产生外部操作</p>
+            </aside>
+
+            <div class="agent-workspace">
+              <div class="agent-timeline" id="timeline">
+                <div class="agent-step" data-step="0"><i></i><div><strong>观察目标</strong><span>读取角色、地点与时间约束</span></div><b>WAIT</b></div>
+                <div class="agent-step" data-step="1"><i></i><div><strong>搜索公开岗位</strong><span>构建查询并保留来源链接</span></div><b>WAIT</b></div>
+                <div class="agent-step" data-step="2"><i></i><div><strong>解析与去重</strong><span>JD Schema + Canonical URL</span></div><b>WAIT</b></div>
+                <div class="agent-step" data-step="3"><i></i><div><strong>匹配与排序</strong><span>Candidate Evidence × Requirement</span></div><b>WAIT</b></div>
+                <div class="agent-step" data-step="4"><i></i><div><strong>建立审批提案</strong><span>外部动作仍由用户决定</span></div><b>WAIT</b></div>
+              </div>
+              <div class="result-stack" id="resultStack" aria-live="polite">
+                <div class="empty-state"><div class="scan-cube"><span></span><span></span><span></span></div><strong>等待任务启动</strong><p>运行后将在这里展示岗位评估结果</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="boundary section-pad" id="boundary">
+        <div class="boundary-grid">
+          <div class="boundary-copy reveal">
+            <div class="eyebrow"><span></span> HUMAN-IN-THE-LOOP</div>
+            <h2>自主执行分析<br />不替用户做高风险决定</h2>
+            <p>Agent 可以搜索、读取、解析、去重、匹配和记录；但投递、登录招聘网站、联系招聘者等动作不在自动工具白名单中。</p>
+            <a class="text-link" href="https://github.com/changxiali/agentic-job-search-copilot/blob/main/SECURITY.md" target="_blank" rel="noreferrer">阅读安全边界说明</a>
+          </div>
+          <div class="permission-cube reveal" id="permissionCube">
+            <div class="permission-layer allowed"><span>自动执行</span><strong>SEARCH · READ · ANALYZE</strong><small>只读与内部分析能力</small></div>
+            <div class="permission-layer review"><span>需要审批</span><strong>PREPARE APPLICATION</strong><small>生成个性化申请材料</small></div>
+            <div class="permission-layer blocked"><span>默认禁止</span><strong>SUBMIT · MESSAGE · LOGIN</strong><small>不自动投递或外部联系</small></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="closing section-pad">
+        <div class="closing-orb" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="closing-copy reveal">
+          <div class="eyebrow"><span></span> OPEN SOURCE · PRIVACY FIRST</div>
+          <h2>一个真实问题，<br />三次系统演进。</h2>
+          <p>代码、数据模型、测试与安全边界均已开源。Demo 中的公司、岗位与候选人信息全部为虚构内容。</p>
+          <a class="button primary" href="https://github.com/changxiali/agentic-job-search-copilot" target="_blank" rel="noreferrer"><span>前往 GitHub 仓库</span></a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-brand"><span class="brand-cube mini" aria-hidden="true"><i></i><i></i><i></i></span><b>JOB//AGENT</b></div>
+      <p>Agentic Job Search Copilot · Interactive Project Demo</p>
+      <span>DESIGNED WITH HUMAN APPROVAL</span>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>
